@@ -3,7 +3,7 @@
  * Caches all app assets for full offline support
  */
 
-const CACHE_NAME = 'homecode-v7';
+const CACHE_NAME = 'homecode-v9';
 
 const ASSETS_TO_CACHE = [
   './',
@@ -13,6 +13,7 @@ const ASSETS_TO_CACHE = [
   './auth.js',
   './db.js',
   './scanner.js',
+  './chat.js',
   './app.js',
   './manifest.json',
   './icons/icon.svg',

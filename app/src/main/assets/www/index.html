@@ -631,6 +631,30 @@
     </div>
   </div>
 
+  <!-- CHAT DE SOPORTE (flotante) -->
+  <button id="chat-fab" class="chat-fab" style="display:none" onclick="SupportChat.toggle()" aria-label="Abrir chat de soporte">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+  <div id="chat-panel" class="chat-panel">
+    <div class="chat-header">
+      <div>
+        <strong>Soporte HomeCode</strong>
+        <small>Asistente de la app</small>
+      </div>
+      <button class="chat-close" onclick="SupportChat.close()" aria-label="Cerrar chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="chat-log" class="chat-log"></div>
+    <div id="chat-pending" class="chat-pending" style="display:none">Escribiendo…</div>
+    <div class="chat-form">
+      <input type="text" id="chat-input" placeholder="Escribe tu consulta…" autocomplete="off" onkeydown="SupportChat.onKey(event)" />
+      <button id="chat-send" type="button" onclick="SupportChat.send()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
   <!-- MODAL: Falta configurar Supabase -->
   <div id="modal-not-configured" class="modal-overlay" style="display:none">
     <div class="modal">
@@ -649,6 +673,7 @@
   <script src="auth.js"></script>
   <script src="db.js"></script>
   <script src="scanner.js"></script>
+  <script src="chat.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

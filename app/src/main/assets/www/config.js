@@ -16,6 +16,11 @@ const CONFIG = {
   // Correo del administrador (solo se usa para mostrarlo en la UI;
   // la seguridad real la impone RLS en el servidor).
   ADMIN_EMAIL: 'admincode@hcs.com',
+
+  // URL del chat de soporte (API FastAPI POST /chat).
+  // Desarrollo local: http://127.0.0.1:8000/chat
+  // Hugging Face Spaces: https://benigno06-homecode-support-chat.hf.space/chat
+  CHAT_API_URL: 'https://benigno06-homecode-support-chat.hf.space/chat',
 };
 
 // ¿Ya está configurado? (evita llamadas a una URL de ejemplo)

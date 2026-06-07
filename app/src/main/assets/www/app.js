@@ -1145,6 +1145,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Reacciona a cambios de rol (admin/común)
   if (typeof Auth !== 'undefined') Auth.onChange(AdminUI.reflectRole);
 
+  // Botón flotante de chat de soporte
+  if (typeof SupportChat !== 'undefined') SupportChat.init();
+
   // Re-sincroniza la caché cuando vuelve la conexión
   window.addEventListener('online',  () => {
     DB.syncCache()
@@ -1160,6 +1163,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Interceptor del botón Back físico de Android
 window.onAndroidBackKey = function() {
   if (typeof App === 'undefined') return;
+  const chatPanel = document.getElementById('chat-panel');
+  if (chatPanel && chatPanel.classList.contains('open')) {
+    if (typeof SupportChat !== 'undefined') SupportChat.close();
+    return;
+  }
   const current = App.getCurrentScreen();
   if (current === 'home') {
     // Si estamos en la página de inicio, muestra el modal de confirmación de salida
